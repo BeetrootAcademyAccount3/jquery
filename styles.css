@@ -1,0 +1,36 @@
+img {
+  width: 500px;
+}
+
+.item {
+  font-size: 2rem;
+  color: blue;
+}
+
+.primary {
+  color: red;
+}
+
+.secondary {
+  color: pink;
+}
+
+.bg {
+  background-color: pink;
+}
+
+.list {
+  list-style: none;
+  width: 50%;
+  border: 1px solid black;
+  padding: 0;
+}
+
+li {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: yellow;
+}
