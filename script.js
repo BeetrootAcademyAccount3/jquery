@@ -1,6 +1,26 @@
 const array = [1, 23, 4];
 
+const postsEndpoint = "https://jsonplaceholder.typicode.com/posts";
+
 $(() => {
+  $.get(postsEndpoint, (response) => {
+    $.each(response, (index, item) => {
+      console.log(item);
+      $("#list")
+        .append($(`<li>${index}.${item.title}</li>`))
+        .addClass("item");
+    });
+  })
+    .done(() => {
+      console.log("Request was a success");
+    })
+    .fail(() => {
+      console.log("Request failed");
+    })
+    .always(() => {
+      console.log("Get finished executing");
+    });
+
   $("#title").css("color", "red");
 
   $("#btnHide").on("click", () => {
@@ -40,9 +60,6 @@ $(() => {
       .addClass("highlight")
       .text("This is the SubTitle")
       .fadeOut(1000);
-  });
-  $.each(array, (num) => {
-    console.log(num);
   });
 
   const title = $("#subTitle").text();
